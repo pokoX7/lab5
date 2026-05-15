@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GeoIP Test Browser</title>
+</head>
+<body>
+    <h1>Проверка запроса к geoiplookup.io</h1>
+    <div id="result"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function fetchGeoIP() {
+            const resultDiv = document.getElementById('result');
+            try {
+                const response = await axios.get('https://json.geoiplookup.io/');
+                resultDiv.innerHTML = 'Data: <pre>' + JSON.stringify(response.data, null, 2) + '</pre>';
+                console.log('Data:', response.data);
+            } catch (error) {
+                resultDiv.innerHTML = 'Error: ' + error.message;
+                console.error('Error:', error.message);
+            }
+        }
+        
+        fetchGeoIP();
+    </script>
+</body>
+</html>

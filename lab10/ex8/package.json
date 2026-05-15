@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start:local": "set NODE_ENV=local&& node env-test.js",
+    "start:dev": "set NODE_ENV=dev&& node env-test.js",
+    "start:prod": "set NODE_ENV=prod&& node env-test.js"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2"
+  }
+}

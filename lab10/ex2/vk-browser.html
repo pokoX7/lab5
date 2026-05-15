@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VK Test Browser</title>
+</head>
+<body>
+    <h1>Проверка CORS запроса к vk.com</h1>
+    <div id="result"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function fetchVK() {
+            const resultDiv = document.getElementById('result');
+            try {
+                const response = await axios.get('https://vk.com');
+                resultDiv.innerHTML = 'Status: ' + response.status;
+                console.log('Success:', response.status);
+            } catch (error) {
+                resultDiv.innerHTML = 'Ошибка CORS: ' + error.message;
+                console.error('CORS Error:', error.message);
+            }
+        }
+        
+        fetchVK();
+    </script>
+</body>
+</html>
