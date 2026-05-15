@@ -13,4 +13,10 @@
      npm run start:local
      npm run start:dev
      npm run start:prod
+По 11:
+  4-9: npm init vue@latest   #+TS
+       cd ...
+       +src
+       npm install
+       npm run dev
 ```
